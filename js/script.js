@@ -2,7 +2,7 @@ var enterButton = document.getElementById('enterbutton');
 var againButton = document.getElementById('againbutton');
 var output = document.getElementById('output');
 
-var randomNumber = Math.ceil(Math.random()*100);
+var randomNumber = Math.floor(Math.random() * 10) + 1;
 
 function checkNumber(){
   var input = document.getElementById('userinput').value;
@@ -23,12 +23,11 @@ function checkNumber(){
     output.innerHTML="That's not a number!";
   }
   else{
-    output.innerHTML="Lower, it has to be between 1 and 100";
+    output.innerHTML="You guessed too low!";
   }
 
-}
-
-enterButton.addEventListener("click", checkNumber);
-  againButton.addEventListener("click", function(){
+};
+ enterButton.addEventListener('click', checkNumber);
+  againButton.addEventListener('click', function(){
   location.reload();
-})
+});
